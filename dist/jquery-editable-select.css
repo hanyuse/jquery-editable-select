@@ -4,13 +4,53 @@
  *
  * Source on GitHub @ https://github.com/indrimuska/jquery-editable-select
  */
+*{
+	box-sizing: border-box;
 
-input.es-input { padding-right: 20px !important; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG2YAABzjgAA4DIAAIM2AAB5CAAAxgwAADT6AAAgbL5TJ5gAAABGSURBVHjaYvz//z8DOYCJgUzA0tnZidPK8vJyRpw24pLEpwnuVHRFhDQxMDAwMPz//x+OOzo6/iPz8WFGuocqAAAA//8DAD/sORHYg7kaAAAAAElFTkSuQmCC) right center no-repeat; }
-input.es-input.open {
+}
+input{
+	height: 40px;
+	border: 1px solid #626161;
+	border-radius: 5px;
+	outline: none;
+	text-indent: 1em;
+}
+
+input.es-input::-ms-clear{
+	display:none;
+}
+
+input.es-input::-ms-reveal{
+	display:none;
+}
+
+input.es-input { 
+	width:100%;
+	padding-right: 20px !important; 
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAYAAADJEc7MAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG2YAABzjgAA4DIAAIM2AAB5CAAAxgwAADT6AAAgbL5TJ5gAAABGSURBVHjaYvz//z8DOYCJgUzA0tnZidPK8vJyRpw24pLEpwnuVHRFhDQxMDAwMPz//x+OOzo6/iPz8WFGuocqAAAA//8DAD/sORHYg7kaAAAAAElFTkSuQmCC) right center no-repeat; }
+/* input.es-input.open {
 	-webkit-border-bottom-left-radius: 0; -moz-border-radius-bottomleft: 0; border-bottom-left-radius: 0;
-	-webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomright: 0; border-bottom-right-radius: 0; }
-.es-list { position: absolute; padding: 0; margin: 0; border: 1px solid #d1d1d1; display: none; z-index: 1000; background: #fff; max-height: 160px; overflow-y: auto;
-	-moz-box-shadow: 0 2px 3px #ccc; -webkit-box-shadow: 0 2px 3px #ccc; box-shadow: 0 2px 3px #ccc; }
-.es-list li { display: block; padding: 5px 10px; margin: 0; }
-.es-list li.selected { background: #f3f3f3; }
+	-webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomright: 0; border-bottom-right-radius: 0; } */
+.es-list { 
+	border-radius: 5px;
+	position: absolute; 
+	padding: 0; 
+	margin: 0; 
+	border: 1px solid rgba(0, 0, 0, .15); display: none; z-index: 1000; background: #fff; max-height: 160px; overflow-y: auto;
+	-moz-box-shadow: 0 2px 3px #ccc; -webkit-box-shadow: 0 2px 3px #ccc; box-shadow: 0 2px 3px #ccc;}
+.es-list li { 
+	display: block;
+	padding: 5px 10px; 
+	margin: 0; 
+	cursor: pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.es-list li.selected {
+	border-bottom: 1px dashed  #f3f3f3; 
+	background: #f5f5f5; 
+
+}
 .es-list li[disabled] { opacity: .5; }

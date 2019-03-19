@@ -17,7 +17,7 @@
 		this.utility = new EditableSelectUtility(this);
 		
 		if (['focus', 'manual'].indexOf(this.options.trigger) < 0) this.options.trigger = 'focus';
-		if (['default', 'fade', 'slide'].indexOf(this.options.effects) < 0) this.options.effects = 'default';
+		if (['default', 'fade', 'slide'].indexOf(this.options.effects) < 0) this.options.effects = 'fade';
 		if (isNaN(this.options.duration) && ['fast', 'slow'].indexOf(this.options.duration) < 0) this.options.duration = 'fast';
 		
 		// create text input
@@ -43,7 +43,7 @@
 	};
 	EditableSelect.prototype.show = function () {
 		this.$list.css({
-			top:   this.$input.position().top + this.$input.outerHeight() - 1,
+			top:   this.$input.position().top + this.$input.outerHeight() + 2,
 			left:  this.$input.position().left,
 			width: this.$input.outerWidth()
 		});
